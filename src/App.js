@@ -12,8 +12,6 @@ class App extends Component {
   render() {
     return (
       <Provider store={store} >
-
-
         <BrowserRouter>
           <div>
             <Header />
@@ -22,14 +20,10 @@ class App extends Component {
             <Route path='/write' exact component={Write}></Route>
             <Route path='/detail/:id' exact component={Detail}></Route>
           </div>
-
         </BrowserRouter>
-
-
       </Provider>
     );
   }
-
 }
 
 export default App;

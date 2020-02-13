@@ -30,18 +30,14 @@ const getSearchList = (data) => ({
     totalPage: Math.floor(data.length / 5)
 })
 
+//如果使用redux-thunk来处理异步请求，ajax请求一般放在actioncreator里面
 export const getList = () => {
     return (dispatch) => {
         axios.get('/api/searchlist.json').then((res) => {
             const data = res.data;
-            // console.log(data);
             dispatch(getSearchList(data.data));
-
         }).catch(() => {
             console.log("error");
         })
-
     }
-
-
 };

@@ -13,10 +13,7 @@ import {
 } from './style';
 
 //PureComponent相比Component，当数据变化的时候不至于更新所有组件的render 
-
 class Home extends PureComponent {
-
-
 
     handleTop() {
         window.scrollTo(0, 0);
