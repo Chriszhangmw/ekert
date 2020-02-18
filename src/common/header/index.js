@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { actionCreators as loginActionCreators } from '../../pages/login/store';
 
-//这里想点击header组件的推出来实现推出功能，但是header的actioncreator只负责header部分，所以需要重新引入login组件的actioncreator
+
 import { actionCreators } from './store';
 
 
@@ -46,10 +46,10 @@ class Header extends Component {
             return (
                 <SearchInfo onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
                     <SearchInfoTitle>
-                        热门搜索
+                        Recommends
                     </SearchInfoTitle>
                     <SearchInfoSwitch onClick={() => changeHuan(page, totalPage)}>
-                        换一批
+                        Change More
                     </SearchInfoSwitch>
                     <SearchInfoList>
                         {pageList}
@@ -70,14 +70,13 @@ class Header extends Component {
                 </Link>
 
                 <Nav>
-                    <NavItem className='left active'>首页</NavItem>
-                    <NavItem className='left'>下载APP</NavItem>
+                    <NavItem className='left active'>Home</NavItem>
+                    <NavItem className='left'>Download APP</NavItem>
                     {
-                        this.props.login ? <NavItem className='right' onClick={this.props.logout}>退出</NavItem> :
-                            <Link to='/login'><NavItem className='right'>登录</NavItem></Link>
+                        this.props.login ? <NavItem className='right' onClick={this.props.logout}>LogOut</NavItem> :
+                            <Link to='/login'><NavItem className='right'>LogIn</NavItem></Link>
 
                     }
-                    <NavItem className='right'>Aa</NavItem>
                     <SearchWrapper>
                         <CSSTransition timeout={200} in={this.props.focused} classNames="slide">
                             <NavSearch
@@ -86,17 +85,17 @@ class Header extends Component {
                                 onBlur={this.props.handleInputBlur}
                             ></NavSearch>
                         </CSSTransition>
-                        <i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>搜索</i>
+                        <i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>Search</i>
                         {this.getSearchArea()}
                     </SearchWrapper>
                 </Nav>
 
                 <Addition>
                     <Link to='/write'>
-                        <Button className='writting'>写文章</Button>
+                        <Button className='writting'>Admin</Button>
                     </Link>
 
-                    <Button className='reg'>注册</Button>
+                    <Button className='reg'>Register</Button>
                 </Addition>
 
             </HeaderWrapper>

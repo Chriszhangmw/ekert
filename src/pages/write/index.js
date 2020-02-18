@@ -9,7 +9,15 @@ class Write extends PureComponent {
         const { loginSatus } = this.props;
         if (loginSatus) {
             return (
-                <div>写文章</div>
+                <div>
+                    <button>Run Reports</button>
+                    <button>Process Invoice</button>
+                    <button>Process Order</button>
+                    <button>Check Stock</button>
+                    <button>View Analytics</button>
+                    <button>Restock</button>
+                </div>
+
             )
         } else {
             return <Redirect to='/login'></Redirect>

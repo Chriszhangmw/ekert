@@ -12,7 +12,6 @@ import {
     BackTop
 } from './style';
 
-//PureComponent相比Component，当数据变化的时候不至于更新所有组件的render 
 class Home extends PureComponent {
 
     handleTop() {
@@ -26,7 +25,7 @@ class Home extends PureComponent {
                     <img
                         alt=''
                         className='banner-img'
-                        src="//upload-images.jianshu.io/upload_images/14705879-0539726db06813f9.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/638/format/webp" />
+                        src="https://images-eu.ssl-images-amazon.com/images/G/02/UK-hq/2018/img/Prime/XCM_Manual_1121975_free_Shipping_3000x600_Prime_GW_DesktopHero_3000x600_jpg._CB485974826_.jpg" />
                     <Topic />
                     <List />
                 </HomeLeft>
@@ -36,7 +35,7 @@ class Home extends PureComponent {
                 </HomeRight>
                 {
                     showScro ? <BackTop onClick={this.handleTop}>
-                        回到顶部
+                        BackTop
                 </BackTop> : null
                 }
 

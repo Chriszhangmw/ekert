@@ -32,7 +32,7 @@ class List extends Component {
                     })
                 }
                 <LoadMore onClick={() => viewMore(page)}>
-                    更多文章
+                    More Goods
             </LoadMore>
             </div>
         )
